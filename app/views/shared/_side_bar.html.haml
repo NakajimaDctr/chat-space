@@ -1,0 +1,38 @@
+
+.side-bar
+  / ヘッダー
+  .side-bar__header
+    .side-bar__header__user-box
+      .side-bar__header__user-box__user-name
+        ユーザー名
+      %ul.side-bar__header__user-box__menu-lists
+        %li
+          = link_to "#" do
+            = icon('far', 'edit', class: "side-bar__header__user-box__btn--icon")
+        %li
+          = link_to "#" do
+            = icon('fas', 'cog',  class: "side-bar__header__user-box__btn--icon")
+
+  / グループリスト
+  .side-bar__group-box
+    .side-bar__group-box__group-name
+      グループ名1
+    .side-bar__group-box__last-message
+      こんにちは！
+  .side-bar__group-box
+    .side-bar__group-box__group-name
+      グループ名2
+    .side-bar__group-box__last-message
+      まだメッセージがありません
+  .side-bar__group-box
+    .side-bar__group-box__group-name
+      グループ名3
+    .side-bar__group-box__last-message
+      まだメッセージがありません
+  .side-bar__group-box
+    .side-bar__group-box__group-name
+      グループ名4
+    .side-bar__group-box__last-message
+      まだメッセージがありません
+
+
