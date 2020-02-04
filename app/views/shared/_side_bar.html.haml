@@ -7,32 +7,17 @@
         = current_user.name
       %ul.side-bar__header__user-box__menu-lists
         %li
-          = link_to "#" do
+          = link_to new_group_path do
             = icon('far', 'edit', class: "side-bar__header__user-box__btn--icon")
         %li
           = link_to edit_user_path(current_user.id) do
             = icon('fas', 'cog',  class: "side-bar__header__user-box__btn--icon")
 
   / グループリスト
-  .side-bar__group-box
-    .side-bar__group-box__group-name
-      グループ名1
-    .side-bar__group-box__last-message
-      こんにちは！
-  .side-bar__group-box
-    .side-bar__group-box__group-name
-      グループ名2
-    .side-bar__group-box__last-message
-      まだメッセージがありません
-  .side-bar__group-box
-    .side-bar__group-box__group-name
-      グループ名3
-    .side-bar__group-box__last-message
-      まだメッセージがありません
-  .side-bar__group-box
-    .side-bar__group-box__group-name
-      グループ名4
-    .side-bar__group-box__last-message
-      まだメッセージがありません
-
-
+  - current_user.groups.each do |group|
+    .side-bar__group-box
+      .side-bar__group-box__group-name
+        = group.name
+      .side-bar__group-box__last-message
+        こんにちは！
+ 
