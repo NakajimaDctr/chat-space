@@ -4,13 +4,13 @@
   .side-bar__header
     .side-bar__header__user-box
       .side-bar__header__user-box__user-name
-        ユーザー名
+        = current_user.name
       %ul.side-bar__header__user-box__menu-lists
         %li
           = link_to "#" do
             = icon('far', 'edit', class: "side-bar__header__user-box__btn--icon")
         %li
-          = link_to "#" do
+          = link_to edit_user_path(current_user.id) do
             = icon('fas', 'cog',  class: "side-bar__header__user-box__btn--icon")
 
   / グループリスト
