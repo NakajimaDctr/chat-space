@@ -1,0 +1,4 @@
+.notification
+  - flash.each do |key, value|
+    / flashオブジェクトのデフォルトのキー値をclass名に設定する
+    = content_tag :div, value, class: key
