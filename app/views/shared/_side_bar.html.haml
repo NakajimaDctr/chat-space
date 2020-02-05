@@ -16,8 +16,9 @@
   / グループリスト
   - current_user.groups.each do |group|
     .side-bar__group-box
-      .side-bar__group-box__group-name
-        = group.name
-      .side-bar__group-box__last-message
-        こんにちは！
- 
+      = link_to group_messages_path(group.id) do
+        .side-bar__group-box__group-name
+          = group.name
+        .side-bar__group-box__last-message
+          = group.show_last_message
+  

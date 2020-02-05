@@ -8,6 +8,10 @@ $color-38aef0 : #38aef0;
   box-sizing: border-box;
 }
 
+a {
+  text-decoration: none;
+}
+
 .wrapper{
   display: flex;
 }
@@ -128,7 +132,6 @@ $color-38aef0 : #38aef0;
         padding-left: 20px;
         padding-right: 20px;
         line-height: 40px;
-        text-decoration: none;
         text-align: center;
       }
     }
@@ -175,50 +178,52 @@ $color-38aef0 : #38aef0;
     height: 90px;
     background-color: #d2d2d2;
     padding: 20px 40px;
-    display: flex;
-
-    /*~ テキスト入力と画像選択ボタン配置用のdiv ~*/
-    &__input-box{
-      background-color: $color-ffffff;
-      position: relative;
-      width: 100%;
-      margin-right: 15px;
-      height: 50px;
+    
+    &__new-message{
       display: flex;
-      align-items: center;
-
-      /*~ テキストボックス ~*/
-      &__text{
-        position:absolute;
-        left: 0px;
-        height: 50px;
+    /*~ テキスト入力と画像選択ボタン配置用のdiv ~*/
+      &__input-box{
+        background-color: $color-ffffff;
+        position: relative;
         width: 100%;
-        border-style: none;
-        padding-left: 10px;
+        margin-right: 15px;
+        height: 50px;
+        display: flex;
+        align-items: center;
+
+        /*~ テキストボックス ~*/
+        &__text{
+          position:absolute;
+          left: 0px;
+          height: 50px;
+          width: 100%;
+          border-style: none;
+          padding-left: 10px;
+        }
+
+        /*~ 画像ボタン用label ~*/
+        &__image{
+          position:absolute;
+          right: 10px;
+          font-size: 25px;
+          cursor: pointer;
+          
+          /*~ デフォルトのボタンとファイル名を非表示 ~*/
+          &__input{
+            display: none;
+          }
+        }
       }
 
-      /*~ 画像ボタン用label ~*/
-      &__image{
-        position:absolute;
-        right: 10px;
-        font-size: 25px;
+      /*~ 送信ボタン ~*/
+      &__submit{
+        background-color: $color-38aef0;
+        height: 50px;
+        padding-left: 30px;
+        padding-right: 30px;
+        color: $color-ffffff;
         cursor: pointer;
       }
-      
-      /*~ デフォルトのボタンとファイル名を非表示 ~*/
-      #image{
-        display: none;
-      }
-    }
-
-    /*~ 送信ボタン ~*/
-    &__submit{
-      background-color: $color-38aef0;
-      height: 50px;
-      padding-left: 30px;
-      padding-right: 30px;
-      color: $color-ffffff;
-      cursor: pointer;
     }
   }
 }
