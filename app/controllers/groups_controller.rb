@@ -32,7 +32,7 @@ class GroupsController < ApplicationController
 
     # 更新が完了したらindexへ遷移
     if @group.update(group_params)
-      redirect_to root_path, notice: 'グループを更新しました'
+      redirect_to  group_messages_path(@group.id), notice: 'グループを更新しました'
     else
       # 更新失敗したら更新画面へ遷移
       render :edit
