@@ -1,0 +1,13 @@
+
+.main-chat__messages__message-box
+  .main-chat__messages__message-box__sender-box
+    .main-chat__messages__message-box__sender-box__sender-name
+      = message.user.name
+    .main-chat__messages__message-box__sender-box__send-time
+      = message.created_at.strftime("%Y年%m月%d日 %H時%M分")
+  .main-chat__messages__message-box__message
+    / メッセージテキストが存在する場合
+    - if message.content.present?
+      = message.content
+    - if message.image.present?
+      = image_tag message.image.url
