@@ -10,14 +10,15 @@ class GroupsController < ApplicationController
   end
   def create
     # 新規グループのインスタンス作成（送信時点の情報）
+    # メンバー情報（user_ids）は@groupではなく、GroupUserモデルのインスタンスが保持する
     @group = Group.new(group_params)
-
     # 登録が成功したら、indexへ遷移する
     if @group.save
       redirect_to root_path, notice: 'グループを作成しました'
     else
       # 登録失敗の場合、グループ作成画面へ遷移する
-      # 送信時点のgroupインスタンスの情報を持ってnewのviewへ遷移する
+      # 入力情報はグループ名とメンバーリスト→メンバーリストは@group内で保持しない
+      # そのため、ここに来るのはグループ名がない場合。よってここにきた時、@groupは空となりnew画面の送信先はcreateとなる
       render :new
     end
   end
