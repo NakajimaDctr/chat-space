@@ -143,6 +143,7 @@ a {
     background-color: #fafafa;
     padding-top: 35px;
     padding-left: 40px;
+    overflow: scroll;
 
     /*~ メッセージ（1件）用のdiv ~*/
     &__message-box{
