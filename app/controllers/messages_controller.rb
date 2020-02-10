@@ -12,9 +12,14 @@ class MessagesController < ApplicationController
     # グループに紐づくMessageインスタンスを生成
     @message = @group.messages.new(message_params)
 
-    # 登録が成功したらindexへ遷移 & flashオブジェクトにメッセージ追加
+    # 登録が成功
     if @message.save
-      redirect_to  group_messages_path(@group.id), notice: 'メッセージが送信されました'
+
+      # JSONでデータを返す
+      respond_to do |format|
+        format.json
+      end
+      
     else
       # 失敗した場合、indexへ遷移する
       @messages = @group.messages.includes(:user)
