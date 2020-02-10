@@ -12,6 +12,14 @@ class UsersController < ApplicationController
     end
   end
 
+  def index
+    # 入力を元にユーザーを部分一致で検索（ログインユーザーは除く、上限10名）
+    @users = User.where('name LIKE(?)', "%#{params[:keyword]}%").where.not(id: current_user.id).limit(10)
+    respond_to do |format|
+      format.json
+    end
+  end
+
   private
   def user_params
     params.require(:user).permit(:name, :email)
