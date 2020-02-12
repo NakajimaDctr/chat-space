@@ -17,7 +17,7 @@ $(function(){
 
     if(message.image){
       // 画像が存在する場合
-      html = html + `   <img src=${message.image}/>
+      html = html + `   <img src=${message.image}>
                       </div>
                      </div>`;
     } else {
