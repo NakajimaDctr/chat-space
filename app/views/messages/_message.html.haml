@@ -8,6 +8,8 @@
   .main-chat__messages__message-box__message
     / メッセージテキストが存在する場合
     - if message.content.present?
-      = message.content
+      .main-chat__messages__message-box__message__content
+        = message.content
     - if message.image.present?
-      = image_tag message.image.url
+      .main-chat__messages__message-box__message__image
+        = image_tag message.image.url

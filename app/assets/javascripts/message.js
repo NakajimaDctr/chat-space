@@ -13,11 +13,14 @@ $(function(){
                     </div>
                   </div>
                   <div class='main-chat__messages__message-box__message'>
-                    ${message.content}`
+                    <div class='main-chat__messages__message-box__message__content'>
+                      ${message.content}
+                    </div>`
 
     if(message.image){
       // 画像が存在する場合
-      html = html + `   <img src=${message.image}>
+      html = html + ` <div class='main-chat__messages__message-box__message__image'>
+                        <img src=${message.image}>
                       </div>
                      </div>`;
     } else {
